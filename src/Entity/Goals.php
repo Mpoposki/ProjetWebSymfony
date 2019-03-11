@@ -23,7 +23,7 @@ class Goals
     private $id;
 
     /**
-     * @ORM\Column(type="DateTime", length=255)
+     * @ORM\Column(type="datetime", length=255)
      */
     private $deadLine;
 
@@ -52,18 +52,18 @@ class Goals
 
 
     /**
-     * @return \DateTime|null
+     * @return \datetime|null
      */
-    public function getDeadLine(): ?\DateTime
+    public function getDeadLine(): ?\datetime
     {
         return $this->deadLine;
     }
 
     /**
-     * @param \DateTime $deadLine
+     * @param \datetime $deadLine
      * @return Goals
      */
-    public function setDeadline(\DateTime $deadLine): self
+    public function setDeadline(\datetime $deadLine): self
     {
         $this->deadLine = $deadLine;
 

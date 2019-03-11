@@ -30,7 +30,7 @@ class Exercice
     private $name;
 
     /**
-     * @ORM\Column(type="img", length=255)
+     * @ORM\Column(type="string", length=255)
      */
     private $gif;
 
@@ -65,6 +65,24 @@ class Exercice
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
+    public function getGif(): ?string
+    {
+        return $this->gif;
+    }
+
+    /**
+     * @param string $gif
+     * @return Exercice
+     */
+    public function setGif(string $gif): self
+    {
+        $this->gif = $gif;
+
+        return $this;
+    }
 
 
     /**
