@@ -9,7 +9,18 @@
 namespace App\Controller;
 
 
-class PublicController
-{
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
+class PublicController extends AbstractController
+{
+    /**
+     * @Route("/", name="home", methods={"GET", "POST"})
+     * @return Response
+     */
+    public function home(): Response
+    {
+        return $this->render('public/index.html.twig');
+    }
 }
