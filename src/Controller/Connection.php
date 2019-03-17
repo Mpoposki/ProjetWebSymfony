@@ -22,7 +22,7 @@ class Connection extends AbstractController
     }
 
     /**
-     * @Route("/article/create", name="article_create")
+     * @Route("", name="")
      */
     public function create()
     {
