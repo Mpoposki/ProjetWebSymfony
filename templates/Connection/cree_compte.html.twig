@@ -1,1 +1,56 @@
 {% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <div class="col-md-12">
+        <h1>Fiche d'inscription</h1>
+        <br>
+        <div id="formContent">
+            {{ form_start(form) }}
+            <div class="form-group" >
+                {{ form_row(form.name) }}
+            </div>
+            <div class="form-group" >
+                {{ form_row(form.lastname) }}
+            </div>
+            <div class="form-group" >
+                {{ form_row(form.email) }}
+            </div>
+            <div class="form-group" >
+                {{ form_row(form.password) }}
+            </div>
+            <div class="form-group"  id="radio" >
+                {{ form_row(form.sex) }}
+            </div>
+            <div class="form-group" >
+                {{ form_row(form.birth) }}
+            </div>
+            <div class="form-group" >
+                {{ form_row(form.weight) }}
+            </div>
+            <div class="form-group" >
+                {{ form_row(form.height) }}
+            </div>
+            <div class="form-group" >
+                {{ form_row(form.time_worked) }}
+            </div>
+            <div class="form-group" >
+                {{ form_row(form.session) }}
+            </div>
+            <div class="form-group" >
+                {{ form_end(form) }}
+            </div>
+
+            {#<div class="form-group">
+                {{ form_row(form.createdAt) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.updateAt) }}
+            </div>
+            #}
+        </div>
+
+    </div>
+
+{% endblock %}
