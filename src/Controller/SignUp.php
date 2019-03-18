@@ -30,8 +30,8 @@ class SignUp extends AbstractController
             $objectManager->persist($user);
             $objectManager->flush();
 
-            return $this->redirectToRoute('', [
-                'slug' => $user->getTitle(),
+            return $this->render("LogOut/baseLogOut.html.twig",[
+                'user' => $user->getName(),
             ]);
 
         }
