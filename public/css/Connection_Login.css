@@ -42,11 +42,11 @@
     border-radius: 0 0 10px 10px;
 }
 
-h2.inactive {
+h1.inactive {
     color: #cccccc;
 }
 
-h2.active {
+h1.active {
     color: #0d0d0d;
     border-bottom: 2px solid #5fbae9;
 }
@@ -215,7 +215,7 @@ input[type=text]::placeholder {
 /*Css for navigation bar*/
 
 .icon_bar {
-    height: 70px;
+    height: 40px;
 }
 
 .list{

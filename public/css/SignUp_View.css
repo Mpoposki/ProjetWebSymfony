@@ -37,7 +37,7 @@ h2.active {
     border-bottom: 2px solid #5fbae9;
 }
 
-input[type=button], input[type=submit], input[type=reset] {
+button{
     background-color: #56baed;
     border: none;
     color: white;
@@ -49,36 +49,15 @@ input[type=button], input[type=submit], input[type=reset] {
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
     margin: 5px 20px 40px 20px;
-
 }
 
-input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-    background-color: grey;
+
+button:hover{
+    background-color: #39ace7;
 }
 
-input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
-    -moz-transform: scale(0.95);
-    -webkit-transform: scale(0.95);
-    -o-transform: scale(0.95);
-    -ms-transform: scale(0.95);
-    transform: scale(0.95);
-}
-#radio{
-    background-color: #f6f6f6;
-    color: #0d0d0d;
-    padding: 10px 28px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
 
-    cursor: pointer;
-    width: 85%;
-    margin-left: 50px;
-    border: 2px solid #f6f6f6;
-    transition: all 0.5s ease-in-out;
-}
-
-input{
+input[type=text] ,input[type=password], input[type=email],input[type=number],input[type=date],select {
     background-color: #f6f6f6;
     color: #0d0d0d;
     padding: 10px 28px;
@@ -92,13 +71,13 @@ input{
     transition: all 0.5s ease-in-out;
 }
 
-input[type=text]:focus ,input[type=password]:focus , input[type=email]:focus,select:focus  {
+input[type=text]:focus ,input[type=password]:focus , input[type=email]:focus,select:focus ,input[type=number]:focus,input[type=date]:focus {
     background-color: #fff;
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid #5fbae9;
 }
 
-input[type=text]::placeholder, input[type=password]::placeholder, input[type=email]::placeholder {
-    color: #cccccc;
+input[type=text]::placeholder, input[type=password]::placeholder, input[type=email]::placeholder,input[type=number]::placeholder,input[type=date]::placeholder {
+    color: #5fbae9;
 }
 
 
@@ -132,7 +111,7 @@ input[type=text]::placeholder, input[type=password]::placeholder, input[type=ema
 /*Css for navigation bar*/
 
 .icon_bar {
-    height: 70px;
+    height: 40px;
 }
 
 .list{

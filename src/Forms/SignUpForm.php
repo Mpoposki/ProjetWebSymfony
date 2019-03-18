@@ -32,29 +32,43 @@ class SignUpForm extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
+                'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre Prénom',]])
             ->add('lastname', TextType::class, [
+                'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre Nom',]])
             ->add('password', PasswordType::class, [
+                'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre mot de passe',]])
             ->add('email', EmailType::class, [
+                'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre Email',]])
             ->add('sex', ChoiceType::class, array('choices' => array(
                 'Homme' => true,
                 'Femme' => false,),
-                'expanded' => true,))
+                'expanded' => false,
+                'label' => ' ',)
+                )
             ->add('birth', BirthdayType::class, [
+                'label' => ' ',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
             ])
             ->add('weight', IntegerType::class, [
+                'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre poids (en kg)',]])
             ->add('height', IntegerType::class, [
+                'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre taille (en cm)',]])
             ->add('time_worked', IntegerType::class, [
+                'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez le temps de travail (mois)',]])
-            ->add('session', NumberType::class)
-            ->add('submit', SubmitType::class);
+            ->add('session', NumberType::class,[
+                'label' => ' ',
+            ])
+            ->add('submit', SubmitType::class, [
+                'label' => 'Enregistrer'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
