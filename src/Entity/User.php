@@ -81,11 +81,6 @@ class User
     private $updateAt;
 
 
-    public function __construct()
-    {
-        $this->createdAt = new \DateTime();
-    }
-
     /**
      * @return integer
      */
@@ -109,6 +104,7 @@ class User
     public function setName($name): self
     {
         $this->name = $name;
+        return $this;
     }
 
     /**
@@ -126,6 +122,7 @@ class User
     public function setLastname($lastname): self
     {
         $this->lastname = $lastname;
+        return $this;
     }
 
     /**
@@ -143,6 +140,7 @@ class User
     public function setPassword($password): self
     {
         $this->password = $password;
+        return $this;
     }
 
     /**
@@ -155,10 +153,12 @@ class User
 
     /**
      * @param string $email
+     * @return User
      */
-    public function setEmail($email): void
+    public function setEmail($email): self
     {
         $this->email = $email;
+        return $this;
     }
 
     /**
@@ -171,10 +171,12 @@ class User
 
     /**
      * @param boolean $sex
+     * @return User
      */
-    public function setSex($sex): void
+    public function setSex($sex): self
     {
         $this->sex = $sex;
+        return $this;
     }
 
     /**
@@ -187,10 +189,12 @@ class User
 
     /**
      * @param boolean $birth
+     * @return User
      */
-    public function setBirth($birth): void
+    public function setBirth($birth): self
     {
         $this->birth = $birth;
+        return $this;
     }
 
     /**
@@ -202,7 +206,8 @@ class User
     }
 
     /**
-     * @param boolean $weight
+     * @param integer $weight
+     *
      */
     public function setWeight($weight): void
     {
@@ -218,7 +223,7 @@ class User
     }
 
     /**
-     * @param boolean $height
+     * @param integer $height
      */
     public function setHeight($height): void
     {
@@ -250,11 +255,12 @@ class User
     }
 
     /**
-     * @param boolean $session
+     * @param integer $session
      */
     public function setSession($session): void
     {
         $this->session = $session;
+
     }
 
     /**

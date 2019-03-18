@@ -17,20 +17,23 @@ class SignUp extends AbstractController
      */
     public function create(Request $request, ObjectManager $objectManager)
     {
-        $user=new User();
-        $form=$this->createForm(SignUpForm::class, $user);
+        $user = new User();
+        $form = $this->createForm(SignUpForm::class, $user);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $user->setCreatedAt(new \DateTime());
+            $user->setUpdateAt(new \DateTime());
+
             $objectManager->persist($user);
             $objectManager->flush();
-            /*
-                        return $this->redirectToRoute('', [
-                            'slug' => $user->getTitle(),
-                        ]);
-             */
+
+            return $this->redirectToRoute('', [
+                'slug' => $user->getTitle(),
+            ]);
+
         }
 
         return $this->render('Connection/SignUp.html.twig', [

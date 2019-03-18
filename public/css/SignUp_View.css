@@ -57,6 +57,7 @@ button:hover{
 }
 
 
+
 input[type=text] ,input[type=password], input[type=email],input[type=number],input[type=date],select {
     background-color: #f6f6f6;
     color: #0d0d0d;
