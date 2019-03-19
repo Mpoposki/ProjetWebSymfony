@@ -6,6 +6,9 @@
 /public/bundles/
 /var/
 /vendor/
+/.idea/ProjetWebSymfony.iml/
+/.idea/php.xml/
+/.idea/workspace.xml/
 ###< symfony/framework-bundle ###
 
 ###> symfony/web-server-bundle ###
