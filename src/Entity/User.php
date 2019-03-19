@@ -64,11 +64,6 @@ class User
     private $time_worked;
 
     /**
-     * @ORM\Column(type="integer" , length=255)
-     */
-    private $session;
-
-    /**
      * @var \DateTime
      * @ORM\Column(name="createdAt" , type="datetime")
      */
@@ -246,22 +241,6 @@ class User
         $this->time_worked = $time_worked;
     }
 
-    /**
-     * @return integer
-     */
-    public function getSession(): ?int
-    {
-        return $this->session;
-    }
-
-    /**
-     * @param integer $session
-     */
-    public function setSession($session): void
-    {
-        $this->session = $session;
-
-    }
 
     /**
      * @return \DateTime

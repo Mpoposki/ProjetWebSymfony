@@ -63,11 +63,10 @@ class SignUpForm extends AbstractType
             ->add('time_worked', IntegerType::class, [
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez le temps de travail (mois)',]])
-            ->add('session', NumberType::class,[
-                'label' => ' ',
-            ])
+
             ->add('submit', SubmitType::class, [
                 'label' => 'Enregistrer'
+
             ]);
     }
 
