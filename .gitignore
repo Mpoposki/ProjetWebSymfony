@@ -9,6 +9,7 @@
 /.idea/ProjetWebSymfony.iml/
 /.idea/php.xml/
 /.idea/workspace.xml/
+/.idea/
 ###< symfony/framework-bundle ###
 
 ###> symfony/web-server-bundle ###
