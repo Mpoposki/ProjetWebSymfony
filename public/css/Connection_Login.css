@@ -1,3 +1,8 @@
+body{
+    background-size: contain;
+    align-items: center;
+    background: url("../Image/Login_background.jpg") no-repeat center;
+}
 #aa {
     color: #92badd;
     display:inline-block;
