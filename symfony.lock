@@ -98,6 +98,7 @@
             "ref": "fb7e19da7f013d0d422fa9bce16f5c510e27609b"
         }
     },
+
     "symfony/asset": {
         "version": "v4.2.4"
     },
@@ -167,9 +168,6 @@
     "symfony/http-kernel": {
         "version": "v4.2.3"
     },
-    "symfony/inflector": {
-        "version": "v4.2.4"
-    },
     "symfony/intl": {
         "version": "v4.2.4"
     },
@@ -182,11 +180,12 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
-    "symfony/options-resolver": {
-        "version": "v4.2.4"
-    },
+
     "symfony/orm-pack": {
         "version": "v1.0.6"
+    },
+    "symfony/options-resolver": {
+        "version": "v4.2.4"
     },
     "symfony/polyfill-intl-icu": {
         "version": "v1.10.0"
@@ -225,6 +224,7 @@
             "branch": "master",
             "version": "3.3",
             "ref": "369b5b29dc52b2c190002825ae7ec24ab6f962dd"
+
         },
         "files": [
             "./config/packages/twig.yaml",
@@ -257,7 +257,7 @@
         "version": "v4.2.3"
     },
     "twig/twig": {
-        "version": "v2.6.2"
+        "version": "v2.7.2"
     },
     "zendframework/zend-code": {
         "version": "3.3.1"
