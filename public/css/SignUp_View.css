@@ -1,0 +1,127 @@
+body{
+    background-size: contain;
+    align-items: center;
+    background: url("../Image/signup_background.JPG") no-repeat center;
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 93%;
+    min-height: 100%;
+    padding: 20px;
+}
+
+#formContent {
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 80px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+#formFooter {
+    background-color: #f6f6f6;
+    border-top: 1px solid #dce8f1;
+    padding: 25px;
+    text-align: center;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+h2.inactive {
+    color: #cccccc;
+}
+
+h2.active {
+    color: #0d0d0d;
+    border-bottom: 2px solid #5fbae9;
+}
+
+button{
+    background-color: #56baed;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    font-size: 13px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 20px 40px 20px;
+}
+
+
+
+
+input,input[type=text] ,input[type=password], input[type=email],input[type=number],input[type=date],select {
+    background-color: #f6f6f6;
+    color: #0d0d0d;
+    padding: 10px 28px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 20px;
+    cursor: pointer;
+    width: 85%;
+    border: 2px solid #f6f6f6;
+
+    transition: all 0.5s ease-in-out;
+}
+
+
+
+input[type=text]:focus ,input[type=password]:focus , input[type=email]:focus,select:focus ,input[type=number]:focus,input[type=date]:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #5fbae9;
+}
+
+input[type=text]::placeholder, input[type=password]::placeholder, input[type=email]::placeholder,input[type=number]::placeholder,input[type=date]::placeholder {
+    color: #5fbae9;
+}
+
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: grey;
+    content: "";
+    transition: width 0.2s;
+}
+
+.underlineHover:hover {
+    color: #0d0d0d;
+}
+
+.underlineHover:hover:after{
+    width: 100%;
+}
+
+*:focus {
+    outline: none;
+}
+
+#icon {
+    width:20%;
+}
+/*Css for navigation bar*/
+
+.icon_bar {
+    height: 40px;
+}
+
+.list{
+    font-size: 14px;
+}
+.list:active{
+
+}
