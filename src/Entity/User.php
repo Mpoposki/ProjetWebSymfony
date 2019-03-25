@@ -2,174 +2,238 @@
 namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Entity
  */
 class User
 {
     /**
      * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
-     */
-    private $id;
+     */private $id;
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     *
      */
     private $name;
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(name="lastname",type="string" , length=255)
      */
     private $lastname;
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string" , length=255)
      */
     private $password;
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string" , length=255)
      */
     private $email;
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean",length=1)
      */
     private $sex;
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime" , length=255)
      */
     private $birth;
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , length=255)
      */
     private $weight;
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , length=255)
      */
     private $height;
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     *
+     * @ORM\Column(type="integer" , length=255)
      */
     private $time_worked;
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $session;
-    /**
-     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     * @ORM\Column(name="createdAt" , type="datetime")
      */
     private $createdAt;
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @var \DateTime
+     * @ORM\Column(name="updateAt" , type="datetime")
      */
-    private $updatedAt;
+    private $updateAt;
+    /**
+     * @return integer
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
+    /**
+     * @return string
+     */
     public function getName(): ?string
     {
         return $this->name;
     }
-    public function setName(string $name): self
+    /**
+     * @param string $name
+     * @return User
+     */
+    public function setName($name): self
     {
         $this->name = $name;
         return $this;
     }
+    /**
+     * @return string
+     */
     public function getLastname(): ?string
     {
         return $this->lastname;
     }
-    public function setLastname(string $lastname): self
+    /**
+     * @param string $lastname
+     * @return User
+     */
+    public function setLastname($lastname): self
     {
         $this->lastname = $lastname;
         return $this;
     }
+    /**
+     * @return string
+     */
     public function getPassword(): ?string
     {
         return $this->password;
     }
-    public function setPassword(string $password): self
+    /**
+     * @param string $password
+     * @return User
+     */
+    public function setPassword($password): self
     {
         $this->password = $password;
         return $this;
     }
+    /**
+     * @return string
+     */
     public function getEmail(): ?string
     {
         return $this->email;
     }
-    public function setEmail(string $email): self
+    /**
+     * @param string $email
+     * @return User
+     */
+    public function setEmail($email): self
     {
         $this->email = $email;
         return $this;
     }
+    /**
+     * @return boolean
+     */
     public function getSex(): ?bool
     {
         return $this->sex;
     }
-    public function setSex(bool $sex): self
+    /**
+     * @param boolean $sex
+     * @return User
+     */
+    public function setSex($sex): self
     {
         $this->sex = $sex;
         return $this;
     }
-    public function getBirth(): ?\DateTimeInterface
+    /**
+     * @return \DateTime
+     */
+    public function getBirth(): ?\DateTime
     {
         return $this->birth;
     }
-    public function setBirth(\DateTimeInterface $birth): self
+    /**
+     * @param boolean $birth
+     * @return User
+     */
+    public function setBirth($birth): self
     {
         $this->birth = $birth;
         return $this;
     }
+    /**
+     * @return integer
+     */
     public function getWeight(): ?int
     {
         return $this->weight;
     }
-    public function setWeight(int $weight): self
+    /**
+     * @param integer $weight
+     *
+     */
+    public function setWeight($weight): void
     {
         $this->weight = $weight;
-        return $this;
     }
+    /**
+     * @return integer
+     */
     public function getHeight(): ?int
     {
         return $this->height;
     }
-    public function setHeight(int $height): self
+    /**
+     * @param integer $height
+     */
+    public function setHeight($height): void
     {
         $this->height = $height;
-        return $this;
     }
-    public function getTimeWorked(): ?int
+    /**
+     * @return mixed
+     */
+    public function getTimeWorked()
     {
         return $this->time_worked;
     }
-    public function setTimeWorked(?int $time_worked): self
+    /**
+     * @param mixed $time_worked
+     */
+    public function setTimeWorked($time_worked): void
     {
         $this->time_worked = $time_worked;
-        return $this;
     }
-    public function getSession(): ?int
-    {
-        return $this->session;
-    }
-    public function setSession(?int $session): self
-    {
-        $this->session = $session;
-        return $this;
-    }
-    public function getCreatedAt(): ?\DateTimeInterface
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt(): ?\DateTime
     {
         return $this->createdAt;
     }
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    /**
+     * @param \DateTime $createdAt
+     */
+    public function setCreatedAt(\DateTime $createdAt): void
     {
         $this->createdAt = $createdAt;
-        return $this;
     }
-    public function getUpdatedAt(): ?\DateTimeInterface
+    /**
+     * @return \DateTime
+     */
+    public function getUpdateAt(): \DateTime
     {
-        return $this->updatedAt;
+        return $this->updateAt;
     }
-    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    /**
+     * @param \DateTime $updateAt
+     *@return User
+     */
+    public function setUpdateAt(\DateTime $updateAt): User
     {
-        $this->updatedAt = $updatedAt;
+        $this->updateAt = $updateAt;
         return $this;
     }
 }
