@@ -25,7 +25,7 @@ class SignUp extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $user->setCreatedAt(new \DateTime());
-            $user->setUpdatedAt(new \DateTime());
+            $user->setUpdateAt(new \DateTime());
 
             $objectManager->persist($user);
             $objectManager->flush();
