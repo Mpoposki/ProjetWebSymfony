@@ -21,12 +21,5 @@ class Connection extends AbstractController
         return $this->render('Connection/login.html.twig');
     }
 
-    /**
-     * @Route("", name="")
-     */
-    public function create()
-    {
-
-    }
 
 }
