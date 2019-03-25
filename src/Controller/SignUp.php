@@ -13,7 +13,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class SignUp extends AbstractController
 {
     /**
-     * @Route("/Connection/SignUp")
+     * @Route("/Connection/SignUpz")
+     * @param Request $request
+     * @param ObjectManager $objectManager
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Exception
      */
     public function create(Request $request, ObjectManager $objectManager)
     {
