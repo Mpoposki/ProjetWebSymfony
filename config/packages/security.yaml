@@ -1,0 +1,47 @@
+security:
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        user:
+            entity: { class: App\Entity\User, property: email }
+            admin:
+                entity: { class: App\Entity\Admin, property: email }
+    firewalls:
+        encoders:
+            App\Entity\Utilisateur:
+                algorithm: bcrypt
+            App\Entity\Admin:
+                algorithm: bcrypt
+            role_hierarchy:
+                ROLE_ADMIN: ROLE_USER
+                ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+            firewalls:
+                dev:
+                    pattern: ^/(_(profiler|wdt)|css|images|img|js)/
+                    security: false
+                utilisateur:
+                    pattern: ^/user
+                    switch_user: true
+                    anonymous: true
+                    provider: user
+                    logout:
+                        path: /user/logout
+                    guard:
+                        authenticators:
+                            - App\Security\Guard\UserAuthenticator
+                admin:
+                    pattern: ^/admin
+                    switch_user: true
+                    anonymous: true
+                    provider: admin
+                    logout:
+                        path: /admin/logout
+                    guard:
+                        authenticators:
+                            - App\Security\Guard\AdminAuthenticator
+            access_control:
+                - { path: ^/$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+                - { path: ^/user/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+                - { path: ^/user/, role: ROLE_USER }
+                - { path: ^/admin/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+                - { path: ^/admin/, role: ROLE_SUPER_ADMIN }
+
