@@ -3,7 +3,7 @@ security:
     providers:
         user:
             entity: { class: App\Entity\User, property: email }
-            admin:
+        admin:
                 entity: { class: App\Entity\Admin, property: email }
     firewalls:
         encoders:
