@@ -1,0 +1,16 @@
+{% extends 'baseUser.html.twig' %}
+
+
+{% block body %}
+
+    {% for profil in profils %}
+        <h2>{{ profil.name }}</h2>
+        <p>{{ profil.lastname }}</p>
+
+
+        <hr>
+        <hr>
+    {% endfor %}
+
+
+{% endblock %}
