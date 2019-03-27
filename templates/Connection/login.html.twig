@@ -29,11 +29,13 @@
                 <img src="/Image/Login_icon.png" id="icon" alt="User Icon"/>
             </div>
 
-            <form>
-                <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-                <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+            <form action="{{ path('Login') }}" method="post">
+                <input type="text" id="login" class="fadeIn second" name="_username" placeholder="login">
+                <input type="password" id="password" class="fadeIn third" name="_password" placeholder="password">
                 <input type="submit" class="fadeIn fourth" value="Log In">
             </form>
+
+
 
             <div id="formFooter">
                 <a class="underlineHover" id="aa" href="{{ path('app_signup_create') }}">Nouvelle Utilisateur</a>

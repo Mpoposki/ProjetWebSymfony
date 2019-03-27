@@ -40,6 +40,9 @@ class SignUpForm extends AbstractType
             ->add('password', PasswordType::class, [
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre mot de passe',]])
+            ->add('confirm_password', PasswordType::class, [
+                'label' => ' ',
+                'attr' => ['placeholder' => 'Confirmer votre mot de passe',]])
             ->add('email', EmailType::class, [
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre Email',]])
