@@ -60,13 +60,10 @@ class SignUpForm extends AbstractType
             ->add('weight', IntegerType::class, [
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre poids (en kg)',]])
-
             ->add('weightObj', IntegerType::class, [
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre poids objectif (en kg)',]])
-
-
-            ->add('height', IntegerType::class, [
+           ->add('height', IntegerType::class, [
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre taille (en cm)',]])
             ->add('time_worked', IntegerType::class, [
