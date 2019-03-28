@@ -3,25 +3,21 @@
 
 {% block body %}
 
-     Votre Prenom : <h1>{{ profils.name }}</h1>
-    Votre Nom<h1>{{ profils.lastname }}</h1>
-    Votre poids<h1>{{ profils.weight }} Kg</h1>
-    Votre taille<h1>{{ profils.height }} Cm</h1>
+    <h2>Bienvenue
+        <span>
 
-    Votre poid objectif <h1>{{ profils.weightObj }} Cm</h1>
-    <a href="{{ path('edit') }}"><button>Modifier votre poids </button></a>
-
-    {% if  profils.sex   %}
-    <img src="assets/img/man.png" class="float-right" alt="man icon" width="60px" height="60px">
+    {% if  profils.sex %}
+        <img src="assets/img/man.png" class="float-right" alt="man icon" width="60px" height="60px">
     {% endif %}
 
-    {% if  profils.sex == false   %}
-        <img src="assets/img/girl.png" class="float-right" alt="girl icon" width="60px" height="60px">
-    {% endif %}
+            {% if  profils.sex == false %}
+                <img src="assets/img/girl.png" class="float-right" alt="girl icon" width="60px" height="60px">
+            {% endif %}
 
     </span>
     </h2>
     <br><br>
+
     <table class="table">
         <tbody>
         <tr>
@@ -42,5 +38,7 @@
         </tr>
         </tbody>
     </table>
-    <a href="{{ path("dashboard_user") }}"><button type="button" class="btn btn-info"> Modifier votre poid </button></a>
+    <a href="{{ path('edit') }}">
+        <button type="button" class="btn btn-info"> Modifier votre poid</button>
+    </a>
 {% endblock %}
