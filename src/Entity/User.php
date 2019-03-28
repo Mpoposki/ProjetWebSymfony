@@ -56,6 +56,12 @@ class User implements UserInterface
      * @ORM\Column(type="integer" , length=255)
      */
     private $weight;
+
+    /**
+     * @ORM\Column(type="integer" , length=255)
+     */
+    private $weightObj;
+
     /**
      * @ORM\Column(type="integer" , length=255)
      */
@@ -200,6 +206,23 @@ class User implements UserInterface
     {
         return $this->height;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getWeightObj()
+    {
+        return $this->weightObj;
+    }
+
+    /**
+     * @param mixed $weightObj
+     */
+    public function setWeightObj($weightObj): void
+    {
+        $this->weightObj = $weightObj;
+    }
+
     /**
      * @param integer $height
      */
