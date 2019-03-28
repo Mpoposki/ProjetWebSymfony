@@ -224,6 +224,23 @@ class User implements UserInterface
     {
         return $this->height;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getWeightObj()
+    {
+        return $this->weightObj;
+    }
+
+    /**
+     * @param mixed $weightObj
+     */
+    public function setWeightObj($weightObj): void
+    {
+        $this->weightObj = $weightObj;
+    }
+
     /**
      * @param integer $height
      */

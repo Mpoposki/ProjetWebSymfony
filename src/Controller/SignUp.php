@@ -30,7 +30,7 @@ class SignUp extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $hash=$encoder->encodePassword($user,$user->getPassword());
+            $hash = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($hash);
 
             $user->setCreatedAt(new \DateTime());
@@ -54,15 +54,17 @@ class SignUp extends AbstractController
     /**
      * @Route("/Connection/login" , name="Login")
      */
-    public function Login(){
+    public function Login()
+    {
 
-        return$this->render('Connection/login.html.twig');
+        return $this->render('Connection/login.html.twig');
     }
 
     /**
      * @Route("/deconnexion", name="Logout")
      */
-    public function Deconnexion(){
+    public function Deconnexion()
+    {
 
     }
 }
