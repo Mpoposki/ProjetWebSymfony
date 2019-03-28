@@ -6,6 +6,7 @@
 /public/bundles/
 /var/
 /.idea/
+/.env/
 /vendor/
 /.idea/ProjetWebSymfony.iml/
 /.idea/php.xml/
