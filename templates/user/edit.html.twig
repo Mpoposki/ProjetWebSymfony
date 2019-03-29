@@ -1,0 +1,65 @@
+{% extends 'baseUser.html.twig' %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('assets/css/editStyle.css') }}" >
+
+    <img src="/Image/goal.png" class="imgGoal"/>
+
+
+    <p> Ici, nous suivons votre poids </p>
+
+
+    <p> Afin de suivre votre evolution, nous vous proposons de remplir votre nouveau poids: </p>
+
+    <p> Votre ancien poid est : {{ profils.weight }} kg </p>
+
+    <table class="table">
+            <tr>
+                <td>Mon poid actuel : </td>
+                <td>{{ profils.weight }}<td>
+            </tr>
+            <tr>
+                <td>Ma taille </td>
+                <td>{{ profils.height }}<td>
+
+            </tr>
+
+        <tr>
+            <td>Mon IMC </td>
+            <td> imc = {{ (profils.weight ) / (profils.height/100 * profils.height/100) }}</td>
+        </tr>
+
+        <tr>
+            <td>Votre poid objectif </td>
+            <td> {{ profils.weightObj }}</td>
+        </tr>
+
+        <tr>
+            <td> Bilan </td>
+            <td>{%  if  (profils.weight ) / (profils.height/100 * profils.height/100)  > 30  %}
+
+                    <p> Vous avez un IMC très fort (obesité)</p>
+                {% endif %}
+            </td>
+
+            <td>{%  if  (profils.weight ) / (profils.height/100 * profils.height/100)  > 19   %}
+
+                    <p> Vous avez un IMC très fort, vous devriez manger moins</p>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+
+
+
+    {{ form(form) }}
+
+
+    <h1> Evolution de votre poid </h1>
+
+
+    <hr>
+    <hr>
+
+
+{% endblock %}

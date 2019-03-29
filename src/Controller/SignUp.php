@@ -47,8 +47,6 @@ class SignUp extends AbstractController
         return $this->render('Connection/SignUp.html.twig', [
             'form' => $form->createView(),
         ]);
-
-
     }
 
     /**

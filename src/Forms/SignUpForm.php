@@ -47,11 +47,11 @@ class SignUpForm extends AbstractType
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre Email',]])
             ->add('sex', ChoiceType::class, array('choices' => array(
-                'Homme' => true,
-                'Femme' => false,),
-                'expanded' => false,
-                'label' => ' ',)
-                )
+                    'Homme' => true,
+                    'Femme' => false,),
+                    'expanded' => false,
+                    'label' => ' ',)
+            )
             ->add('birth', BirthdayType::class, [
                 'label' => ' ',
                 'widget' => 'single_text',
@@ -69,7 +69,6 @@ class SignUpForm extends AbstractType
             ->add('time_worked', IntegerType::class, [
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez le temps de travail (mois)',]])
-
             ->add('submit', SubmitType::class, [
                 'label' => 'Enregistrer'
 

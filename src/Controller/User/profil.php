@@ -11,11 +11,9 @@ namespace App\Controller\User;
 
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
 class profil extends AbstractController
-
 {
     /**
      * @Route("/profil", name="profil")
