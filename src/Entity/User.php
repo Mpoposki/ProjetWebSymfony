@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -18,11 +20,10 @@ class User implements UserInterface
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
-     */private $id;
+     */
+    private $id;
     /**
      * @ORM\Column(type="string", length=255)
-     *
-     *
      */
     private $name;
     /**
@@ -81,6 +82,7 @@ class User implements UserInterface
      * @ORM\Column(name="updateAt" , type="datetime")
      */
     private $updateAt;
+
     /**
      * @return integer
      */
@@ -88,6 +90,7 @@ class User implements UserInterface
     {
         return $this->id;
     }
+
     /**
      * @return string
      */
@@ -95,6 +98,7 @@ class User implements UserInterface
     {
         return $this->name;
     }
+
     /**
      * @param string $name
      * @return User
@@ -104,6 +108,7 @@ class User implements UserInterface
         $this->name = $name;
         return $this;
     }
+
     /**
      * @return string
      */
@@ -111,6 +116,7 @@ class User implements UserInterface
     {
         return $this->lastname;
     }
+
     /**
      * @param string $lastname
      * @return User
@@ -120,6 +126,7 @@ class User implements UserInterface
         $this->lastname = $lastname;
         return $this;
     }
+
     /**
      * @return string
      */
@@ -127,6 +134,7 @@ class User implements UserInterface
     {
         return $this->password;
     }
+
     /**
      * @param string $password
      * @return User
@@ -136,6 +144,7 @@ class User implements UserInterface
         $this->password = $password;
         return $this;
     }
+
     /**
      * @return string
      */
@@ -143,6 +152,7 @@ class User implements UserInterface
     {
         return $this->email;
     }
+
     /**
      * @param string $email
      * @return User
@@ -152,6 +162,7 @@ class User implements UserInterface
         $this->email = $email;
         return $this;
     }
+
     /**
      * @return boolean
      */
@@ -159,6 +170,7 @@ class User implements UserInterface
     {
         return $this->sex;
     }
+
     /**
      * @param boolean $sex
      * @return User
@@ -168,6 +180,7 @@ class User implements UserInterface
         $this->sex = $sex;
         return $this;
     }
+
     /**
      * @return \DateTime
      */
@@ -175,6 +188,7 @@ class User implements UserInterface
     {
         return $this->birth;
     }
+
     /**
      * @param boolean $birth
      * @return User
@@ -184,6 +198,7 @@ class User implements UserInterface
         $this->birth = $birth;
         return $this;
     }
+
     /**
      * @return integer
      */
@@ -191,6 +206,7 @@ class User implements UserInterface
     {
         return $this->weight;
     }
+
     /**
      * @param integer $weight
      *
@@ -201,7 +217,6 @@ class User implements UserInterface
     }
 
 
-
     /**
      * @return integer
      */
@@ -209,6 +224,7 @@ class User implements UserInterface
     {
         return $this->weightObj;
     }
+
     /**
      * @param integer $weight
      *
@@ -217,6 +233,7 @@ class User implements UserInterface
     {
         $this->weightObj = $weight;
     }
+
     /**
      * @return integer
      */
@@ -233,6 +250,7 @@ class User implements UserInterface
     {
         $this->height = $height;
     }
+
     /**
      * @return mixed
      */
@@ -240,6 +258,7 @@ class User implements UserInterface
     {
         return $this->time_worked;
     }
+
     /**
      * @param mixed $time_worked
      */
@@ -247,6 +266,7 @@ class User implements UserInterface
     {
         $this->time_worked = $time_worked;
     }
+
     /**
      * @return \DateTime
      */
@@ -254,6 +274,7 @@ class User implements UserInterface
     {
         return $this->createdAt;
     }
+
     /**
      * @param \DateTime $createdAt
      */
@@ -261,6 +282,7 @@ class User implements UserInterface
     {
         $this->createdAt = $createdAt;
     }
+
     /**
      * @return \DateTime
      */
@@ -268,17 +290,16 @@ class User implements UserInterface
     {
         return $this->updateAt;
     }
+
     /**
      * @param \DateTime $updateAt
-     *@return User
+     * @return User
      */
     public function setUpdateAt(\DateTime $updateAt): User
     {
         $this->updateAt = $updateAt;
         return $this;
     }
-
-
 
 
     /**
@@ -293,11 +314,11 @@ class User implements UserInterface
      * and populated in any number of different ways when the user object
      * is created.
      *
-     * @return (Role|string)[] The user roles
+     * @return array (Role|string)[] The user roles
      */
     public function getRoles()
     {
-        return['ROLE_USER'];
+        return ['ROLE_USER'];
     }
 
     /**

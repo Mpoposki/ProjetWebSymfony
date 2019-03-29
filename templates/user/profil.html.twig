@@ -1,19 +1,17 @@
 {% extends 'baseUser.html.twig' %}
 
+{% block title %}Mon profil{% endblock %}
+
 
 {% block body %}
-
     <h2>Bienvenue
         <span>
-
     {% if  profils.sex %}
         <img src="assets/img/man.png" class="float-right" alt="man icon" width="60px" height="60px">
     {% endif %}
-
             {% if  profils.sex == false %}
                 <img src="assets/img/girl.png" class="float-right" alt="girl icon" width="60px" height="60px">
             {% endif %}
-
     </span>
     </h2>
     <br><br>
