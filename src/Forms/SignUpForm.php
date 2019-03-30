@@ -15,16 +15,12 @@ use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\DateTime;
-use Symfony\Component\Validator\Constraints\Length;
+
 
 class SignUpForm extends AbstractType
 {
@@ -49,6 +45,7 @@ class SignUpForm extends AbstractType
             ->add('sex', ChoiceType::class, array('choices' => array(
                     'Homme' => true,
                     'Femme' => false,),
+                    'placeholder' => 'choisissez votre genre',
                     'expanded' => false,
                     'label' => ' ',)
             )
