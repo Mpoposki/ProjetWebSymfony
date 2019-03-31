@@ -36,7 +36,7 @@ class Resetmdp extends AbstractController
             $message = (new \Swift_Message('Votre mot de passe AppSport'))
                 ->setFrom('poposki.smurf@gmail.com')
                 ->setTo('poposki.matthieu@gmail.com')
-                ->setBody('Voici votre mot de passe : ');
+                ->setBody($this->renderView('/Email/resetemail.html.twig'));
 
             $mailer->send($message);
 
