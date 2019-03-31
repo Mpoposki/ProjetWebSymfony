@@ -1,0 +1,16 @@
+{% extends 'baseUser.html.twig' %}
+
+{% block body %}
+
+    <h2><strong>Espace entrainements</strong></h2><br>
+
+
+    {%  for exercice in exercices %}
+        <h2>{{ exercice.name }}</h2><br>
+        <a href="{{ path('exo', {'slug': exercice.name}) }}"><img style="border-color:navy; border-style: dashed" src="{{ exercice.gif }}" alt="{{ exercice.name }}"></a><br><br>
+
+        <hr color="navy">
+
+    {% endfor %}
+
+{% endblock %}

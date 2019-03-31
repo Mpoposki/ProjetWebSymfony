@@ -1,0 +1,11 @@
+{% extends 'baseUser.html.twig' %}
+
+{% block body %}
+
+    <h2>{{ exercice.name }}</h2><br>
+    <img src="{{ exercice.gif }}" ><br><br>
+    <p>{{ exercice.description }}</p>
+    <a href="{{ path('list') }}"> <button style="border-color:navy; border-style: solid; margin: 20px";><b>Retourner aux exercices</b></button></a>
+    <br>
+
+{% endblock %}

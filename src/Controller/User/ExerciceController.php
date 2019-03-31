@@ -1,28 +1,34 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: moham
- * Date: 25/03/2019
- * Time: 12:00
- */
+
 
 namespace App\Controller\User;
-
 
 use App\Entity\Exercice;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class ExerciceController extends Controller
+class ExerciceController extends AbstractController
 {
     /**
-     * @Route("/Exercice", name="exercice")
+     * @Route("/Exercice", name="list")
      */
-    public function ListeExo(){
-        $list=$this->getDoctrine()->getRepository(Exercice::class)->findAll();
+    public function ListeExo()
+    {
 
-        return $this->render('User/exercice.html.twig', array('exercices'=>$list));
+        $list = $this->getDoctrine()->getRepository(Exercice::class)->findAll();
+        return $this->render('user/Exercices/exercice.html.twig', array('exercices' => $list));
+    }
+    /**
+     * @Route("/Exercice/{slug}", name="exo")
+     */
+    public function exo($slug)
+    {
+        $exo=$this->getDoctrine()->getRepository(Exercice::class)->findOneBy(['name' => $slug]);
+        return $this->render('user/Exercices/exoChoisi.html.twig', array('exercice' => $exo));
     }
 
 }
+
+
