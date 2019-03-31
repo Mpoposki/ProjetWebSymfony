@@ -21,7 +21,7 @@ class SignUp extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Exception
      */
-    public function create(Request $request, ObjectManager $objectManager, UserPasswordEncoderInterface $encoder)
+    public function create(Request $request, ObjectManager $objectManager, UserPasswordEncoderInterface $encoder,  \Swift_Mailer $mailer)
     {
         $user = new User();
         $form = $this->createForm(SignUpForm::class, $user);
@@ -39,6 +39,13 @@ class SignUp extends AbstractController
 
             $objectManager->persist($user);
             $objectManager->flush();
+
+
+            $message = (new\Swift_Message('Bienvenue sur AppSport !'))
+                ->setFrom('poposki.smurf@gmail.com')
+                ->setTo($form->getData()['email'])
+                ->setBody('hello');
+
 
             return $this->redirectToRoute("Login");
 
