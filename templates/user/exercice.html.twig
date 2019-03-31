@@ -1,0 +1,16 @@
+{% extends 'baseUser.html.twig' %}
+
+
+{% block body %}
+
+    {% for exercice in exercices %}
+    <h2>{{ exercice.name }}</h2>
+    <p><img src="{{ exercice.gif }}"></p>
+    <p>{{ exercice.description }}</p>
+
+        <hr>
+        <hr>
+    {% endfor %}
+
+
+{% endblock %}

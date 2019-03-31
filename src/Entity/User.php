@@ -1,20 +1,29 @@
 <?php
+
 namespace App\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * @ORM\Entity
+ * @UniqueEntity(
+ *     fields={"email"},
+ *     message="L'email que vous avez tapé est déjà utilisé"
+ * )
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
-     */private $id;
+     */
+    private $id;
     /**
      * @ORM\Column(type="string", length=255)
-     *
-     *
      */
     private $name;
     /**
@@ -23,10 +32,17 @@ class User
     private $lastname;
     /**
      * @ORM\Column(type="string" , length=255)
+     * @Assert\Length(min="8",minMessage="Votre mot de passe doit etre minimum 8 caractères")
+     *
      */
     private $password;
     /**
+     * @Assert\EqualTo(propertyPath="password", message="Vous n'avez pas tapé le meme mot de passe")
+     */
+    public $confirm_password;
+    /**
      * @ORM\Column(type="string" , length=255)
+     * @Assert\Email()
      */
     private $email;
     /**
@@ -41,6 +57,12 @@ class User
      * @ORM\Column(type="integer" , length=255)
      */
     private $weight;
+
+    /**
+     * @ORM\Column(type="integer" , length=255)
+     */
+    private $weightObj;
+
     /**
      * @ORM\Column(type="integer" , length=255)
      */
@@ -60,6 +82,7 @@ class User
      * @ORM\Column(name="updateAt" , type="datetime")
      */
     private $updateAt;
+
     /**
      * @return integer
      */
@@ -67,6 +90,7 @@ class User
     {
         return $this->id;
     }
+
     /**
      * @return string
      */
@@ -74,6 +98,7 @@ class User
     {
         return $this->name;
     }
+
     /**
      * @param string $name
      * @return User
@@ -83,6 +108,7 @@ class User
         $this->name = $name;
         return $this;
     }
+
     /**
      * @return string
      */
@@ -90,6 +116,7 @@ class User
     {
         return $this->lastname;
     }
+
     /**
      * @param string $lastname
      * @return User
@@ -99,6 +126,7 @@ class User
         $this->lastname = $lastname;
         return $this;
     }
+
     /**
      * @return string
      */
@@ -106,6 +134,7 @@ class User
     {
         return $this->password;
     }
+
     /**
      * @param string $password
      * @return User
@@ -115,6 +144,7 @@ class User
         $this->password = $password;
         return $this;
     }
+
     /**
      * @return string
      */
@@ -122,6 +152,7 @@ class User
     {
         return $this->email;
     }
+
     /**
      * @param string $email
      * @return User
@@ -131,6 +162,7 @@ class User
         $this->email = $email;
         return $this;
     }
+
     /**
      * @return boolean
      */
@@ -138,6 +170,7 @@ class User
     {
         return $this->sex;
     }
+
     /**
      * @param boolean $sex
      * @return User
@@ -147,6 +180,7 @@ class User
         $this->sex = $sex;
         return $this;
     }
+
     /**
      * @return \DateTime
      */
@@ -154,6 +188,7 @@ class User
     {
         return $this->birth;
     }
+
     /**
      * @param boolean $birth
      * @return User
@@ -163,6 +198,7 @@ class User
         $this->birth = $birth;
         return $this;
     }
+
     /**
      * @return integer
      */
@@ -170,6 +206,7 @@ class User
     {
         return $this->weight;
     }
+
     /**
      * @param integer $weight
      *
@@ -178,6 +215,25 @@ class User
     {
         $this->weight = $weight;
     }
+
+
+    /**
+     * @return integer
+     */
+    public function getWeightObj(): ?int
+    {
+        return $this->weightObj;
+    }
+
+    /**
+     * @param integer $weight
+     *
+     */
+    public function setWeightObj($weight): void
+    {
+        $this->weightObj = $weight;
+    }
+
     /**
      * @return integer
      */
@@ -185,6 +241,8 @@ class User
     {
         return $this->height;
     }
+
+
     /**
      * @param integer $height
      */
@@ -192,6 +250,7 @@ class User
     {
         $this->height = $height;
     }
+
     /**
      * @return mixed
      */
@@ -199,6 +258,7 @@ class User
     {
         return $this->time_worked;
     }
+
     /**
      * @param mixed $time_worked
      */
@@ -206,6 +266,7 @@ class User
     {
         $this->time_worked = $time_worked;
     }
+
     /**
      * @return \DateTime
      */
@@ -213,6 +274,7 @@ class User
     {
         return $this->createdAt;
     }
+
     /**
      * @param \DateTime $createdAt
      */
@@ -220,6 +282,7 @@ class User
     {
         $this->createdAt = $createdAt;
     }
+
     /**
      * @return \DateTime
      */
@@ -227,13 +290,67 @@ class User
     {
         return $this->updateAt;
     }
+
     /**
      * @param \DateTime $updateAt
-     *@return User
+     * @return User
      */
     public function setUpdateAt(\DateTime $updateAt): User
     {
         $this->updateAt = $updateAt;
         return $this;
+    }
+
+
+    /**
+     * Returns the roles granted to the user.
+     *
+     *     public function getRoles()
+     *     {
+     *         return ['ROLE_USER'];
+     *     }
+     *
+     * Alternatively, the roles might be stored on a ``roles`` property,
+     * and populated in any number of different ways when the user object
+     * is created.
+     *
+     * @return array (Role|string)[] The user roles
+     */
+    public function getRoles()
+    {
+        return ['ROLE_USER'];
+    }
+
+    /**
+     * Returns the salt that was originally used to encode the password.
+     *
+     * This can return null if the password was not encoded using a salt.
+     *
+     * @return string|null The salt
+     */
+    public function getSalt()
+    {
+        // TODO: Implement getSalt() method.
+    }
+
+    /**
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
+     */
+    public function getUsername()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Removes sensitive data from the user.
+     *
+     * This is important if, at any given point, sensitive information like
+     * the plain-text password is stored on this object.
+     */
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
     }
 }

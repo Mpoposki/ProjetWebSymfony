@@ -19,11 +19,11 @@
 </head>
 
 <body>
-<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/"><img src = "assets/img/logo.png" alt="logo" width=20%> </a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 2px">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href=""><img src="/Image/training_icon.png" class="icon_bar">
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="/">Déconnexion</a>
+            <a class="nav-link" href="{{ path('Logout') }}">Déconnexion</a>
         </li>
     </ul>
 </nav>
@@ -40,19 +40,19 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ path('profil') }}">
                             <span data-feather="file"></span>
                             Profil
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ path('exercice') }}">
                             <span data-feather="file"></span>
                             Entraînements
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ path('edit') }}">
                             <span data-feather="file"></span>
                             Objectifs
                         </a>

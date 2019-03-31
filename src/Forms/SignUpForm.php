@@ -15,16 +15,12 @@ use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\DateTime;
-use Symfony\Component\Validator\Constraints\Length;
+
 
 class SignUpForm extends AbstractType
 {
@@ -40,15 +36,19 @@ class SignUpForm extends AbstractType
             ->add('password', PasswordType::class, [
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre mot de passe',]])
+            ->add('confirm_password', PasswordType::class, [
+                'label' => ' ',
+                'attr' => ['placeholder' => 'Confirmer votre mot de passe',]])
             ->add('email', EmailType::class, [
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre Email',]])
             ->add('sex', ChoiceType::class, array('choices' => array(
-                'Homme' => true,
-                'Femme' => false,),
-                'expanded' => false,
-                'label' => ' ',)
-                )
+                    'Homme' => true,
+                    'Femme' => false,),
+                    'placeholder' => 'choisissez votre genre',
+                    'expanded' => false,
+                    'label' => ' ',)
+            )
             ->add('birth', BirthdayType::class, [
                 'label' => ' ',
                 'widget' => 'single_text',
@@ -57,13 +57,15 @@ class SignUpForm extends AbstractType
             ->add('weight', IntegerType::class, [
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre poids (en kg)',]])
+            ->add('weightObj', IntegerType::class, [
+                'label' => ' ',
+                'attr' => ['placeholder' => 'Entrez votre poids objectif (en kg)',]])
             ->add('height', IntegerType::class, [
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre taille (en cm)',]])
             ->add('time_worked', IntegerType::class, [
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez le temps de travail (mois)',]])
-
             ->add('submit', SubmitType::class, [
                 'label' => 'Enregistrer'
 
