@@ -54,7 +54,6 @@ class SignUp extends AbstractController
      */
     public function Login()
     {
-
         return $this->render('Connection/login.html.twig');
     }
 
