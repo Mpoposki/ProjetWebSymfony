@@ -30,22 +30,33 @@
         </tr>
 
         <tr>
-            <td>Votre poid objectif </td>
-            <td> {{ profils.weightObj }}</td>
-        </tr>
-
-        <tr>
+            <td>Votre poid objectif </td><tr>
             <td> Bilan </td>
-            <td>{%  if  (profils.weight ) / (profils.height/100 * profils.height/100)  > 30  %}
 
-                    <p> Vous avez un IMC très fort (obesité)</p>
+            <!-- maigreur-->
+            <td>{%  if  (profils.weight ) / (profils.height/100 * profils.height/100)  <= 18.5  %}
+
+                    <p> Vous avez une insuffisance pondérale (maigreur) </p>
                 {% endif %}
             </td>
 
-            <td>{%  if  (profils.weight ) / (profils.height/100 * profils.height/100)  > 19   %}
-
-                    <p> Vous avez un IMC très fort, vous devriez manger moins</p>
+            <!-- normale -->
+            <td>{%  if  ((profils.weight ) / (profils.height/100 * profils.height/100)  > 18.5) and ((profils.weight ) / (profils.height/100 * profils.height/100)  < 25)  %}
+                    <p> Vous avez une corpulence normale  </p>
                 {% endif %}
+            </td>
+
+            <!-- surpoids-->
+            <td>{%  if  ((profils.weight ) / (profils.height/100 * profils.height/100)  >= 25) and ((profils.weight ) / (profils.height/100 * profils.height/100)  < 30)  %}
+                    <p> Vous êtes en surpoids </p>
+                {% endif %}
+            </td>
+
+            <!--obesité -->
+            <td>{%  if  (profils.weight ) / (profils.height/100 * profils.height/100)  > 30   %}
+                    <p> Vous êtes au stade de l'obesité </p>
+                {% endif %}
+
             </td>
         </tr>
     </table>
