@@ -42,9 +42,9 @@ class SignUp extends AbstractController
 
 
             $message = (new\Swift_Message('Bienvenue sur AppSport !'))
-                ->setFrom('poposki.smurf@gmail.com')
+                ->setFrom('wikipooulala@gmail.com')
                 ->setTo($user->getEmail())
-                ->setBody($this->renderView('/Email/bienvenue.html.twig',array('id'=>$user->getName())));
+                ->setBody($this->renderView('/Email/bienvenue.html.twig',array('name'=>$user->getName(),'email'=>$user->getEmail(),'mdp'=>$user->getPassword())));
 
             $mailer->send($message);
 
