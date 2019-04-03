@@ -33,8 +33,9 @@ class poidForm extends AbstractType
         $builder
             ->add('weight', IntegerType::class, [
                 'label' => ' ',
-                'attr' => ['placeholder' => 'Entrez votre nouveau poids (en kg)',]])
-        ->add('valider', SubmitType::class);
+                'attr' => ['placeholder' => 'Entrez votre nouveau poids (en kg)',
+                    'class' => "form-control"]])
+            ->add('valider', SubmitType::class, ['attr' => ['class' => "btn btn-info"]]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
