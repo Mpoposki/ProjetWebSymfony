@@ -29,3 +29,8 @@ body{
     align-items: center;
     background: url("../img/background.jpg");
 }
+
+.icon_bar_login{
+    width: 25px;
+    height: 25px;
+}
