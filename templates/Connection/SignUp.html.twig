@@ -1,13 +1,19 @@
 {% extends 'base.html.twig' %}
+{% block head %}
 
 {% block title %} Fiche d'inscription {% endblock %}
 
+
+    <meta charset="UTF-8">
+
     {% block stylesheets %}
+        <link href="{{ asset('assets/css/HomeView.css') }}" rel="stylesheet">
         <link href="/css/SignUp_View.css" rel="stylesheet"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
               integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
               crossorigin="anonymous">
     {% endblock %}
+{% endblock %}
 
 {% block body %}
     <div class="col-md-12">

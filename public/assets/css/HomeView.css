@@ -1,18 +1,29 @@
 #icon {
-    width:20%;
+    width: 15%;
 }
-/*Css for navigation bar*/
-
 .icon_bar {
     height: 40px;
 }
-
-.list{
+nav{
+    margin-bottom: 20px;
+}
+li{
+    padding: 12px 14px;
+    fill: #35322a;
+    filter: url('#money');
+    font-family: 'Playfair Display', 'Georgia', serif;
     font-size: 14px;
 }
-.list:active{
 
+li:hover{
+    background-color: #ddd;
+    color: black;
 }
+
+li:active{
+    background-color: #D3D3D3;
+}
+
 body{
     background-size: contain;
     align-items: center;

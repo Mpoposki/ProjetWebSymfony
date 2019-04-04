@@ -214,18 +214,6 @@ input[type=text]::placeholder, input[type=password]::placeholder{
     outline: none;
 }
 
-#icon {
+#iconLogin {
     width:20%;
-}
-/*Css for navigation bar*/
-
-.icon_bar {
-    height: 40px;
-}
-
-.list{
-    font-size: 14px;
-}
-.list:active{
-
 }
