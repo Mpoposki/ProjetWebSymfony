@@ -1,0 +1,61 @@
+button{
+    background-color: #383d41;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    font-size: 13px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(100,100,100,0.9);
+    box-shadow: 0 10px 30px 0 rgba(100,100,100,0.9);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 20px 40px 20px;
+    outline: none;
+
+
+}
+
+button:hover{
+    background-color: #383d41;
+    outline: none;
+
+}
+
+button:active{
+    -moz-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+    outline: none;
+}
+
+.image {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.titre{
+    padding: 5px;
+    fill: #35322a;
+    filter: url('#money');
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 25px;
+    font-weight: 900;
+    outline: none;
+    margin-left: 20px;
+}
+
+.desc{
+    padding: 20px 30px;
+    fill: #35322a;
+    filter: url('#money');
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 14px;
+    font-weight: 900;
+    outline: none;
+    margin: 20px;
+}

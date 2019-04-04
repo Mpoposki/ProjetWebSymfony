@@ -14,6 +14,10 @@ nav{
 }
 li{
     padding: 12px 14px;
+    fill: #35322a;
+    filter: url('#money');
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 14px;
 }
 
 li:hover{
