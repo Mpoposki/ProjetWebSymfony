@@ -1,6 +1,8 @@
 .cont {
+    width: 100%;
+    display: inline-block;
     position: relative;
-    width: 50%;
+
 }
 
 .image {
@@ -37,24 +39,25 @@
 }
 
 
-.btn{
+.btn {
     background-color: #383d41;
     border: none;
     color: white;
     padding: 10px 30px;
     text-align: center;
     font-size: 13px;
-    -webkit-box-shadow: 0 10px 30px 0 rgba(255,255,255,0.4);
-    box-shadow: 0 10px 30px 0 rgba(255,255,255,0.4);
+    -webkit-box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.4);
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
 }
-.btn:hover{
+
+.btn:hover {
     color: #383d41;
     background-color: white;
 }
 
-.btn:active{
+.btn:active {
     -moz-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     -o-transform: scale(0.95);
@@ -77,5 +80,5 @@ div.container {
     font-family: 'Playfair Display', 'Georgia', serif;
     font-size: 15px;
     font-weight: 900;
-
 }
+
