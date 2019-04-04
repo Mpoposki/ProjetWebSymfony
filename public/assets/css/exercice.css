@@ -10,7 +10,6 @@
     height: auto;
     transition: .5s ease;
     backface-visibility: hidden;
-    margin: 20px;
 }
 
 .middle {
@@ -42,7 +41,7 @@
     background-color: #383d41;
     border: none;
     color: white;
-    padding: 30px 50px;
+    padding: 10px 30px;
     text-align: center;
     font-size: 13px;
     -webkit-box-shadow: 0 10px 30px 0 rgba(255,255,255,0.4);
@@ -56,10 +55,27 @@
 }
 
 .btn:active{
-
     -moz-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     -o-transform: scale(0.95);
     -ms-transform: scale(0.95);
     transform: scale(0.95);
+}
+
+div.polaroid {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+}
+
+div.container {
+    text-align: center;
+    padding: 10px 20px;
+    fill: #35322a;
+    filter: url('#money');
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 15px;
+    font-weight: 900;
+
 }

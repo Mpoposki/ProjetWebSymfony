@@ -16,21 +16,20 @@
 {% endblock %}
 
 {% block body %}
-
     <h2><strong>Espace entrainements</strong></h2><br>
     {% for exercice in exercices %}
         <div class="cont">
-            <span>
-                {{ exercice.name }}
-            <img src="{{ exercice.gif }}" alt="{{ exercice.name }}" class="image" style="width:100%">
-            <div class="middle">
-                <a href="{{ path('exo', {'slug': exercice.name}) }}">
-                <button class="btn">plus des dérails</button>
-                </a>
+            <div class="polaroid">
+                <img src="{{ exercice.gif }}" alt="{{ exercice.name }}" class="image" style="width:100%">
+                <div class="container">
+                    <p>{{ exercice.name }}</p>
+                </div>
+                <div class="middle">
+                    <a href="{{ path('exo', {'slug': exercice.name}) }}">
+                        <button class="btn">plus des détails</button>
+                    </a>
+                </div>
             </div>
-            </span>
         </div>
     {% endfor %}
-
-
-    {% endblock %}
+{% endblock %}
