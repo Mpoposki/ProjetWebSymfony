@@ -19,9 +19,9 @@
 
     <h2><strong>Espace entrainements</strong></h2><br>
     {% for exercice in exercices %}
-
         <div class="cont">
             <span>
+                {{ exercice.name }}
             <img src="{{ exercice.gif }}" alt="{{ exercice.name }}" class="image" style="width:100%">
             <div class="middle">
                 <a href="{{ path('exo', {'slug': exercice.name}) }}">
