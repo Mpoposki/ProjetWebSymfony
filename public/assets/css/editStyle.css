@@ -8,22 +8,23 @@
 }
 
 button[type=submit]{
-    background-color: #383d41;
+    background-color: #1c7430;
     border: none;
     color: white;
-    padding: 15px 80px;
+    padding: 10px 60px;
     text-align: center;
     font-size: 13px;
-    -webkit-box-shadow: 0 10px 30px 0 rgba(100,100,100,0.9);
-    box-shadow: 0 10px 30px 0 rgba(100,100,100,0.9);
+    -webkit-box-shadow: 0 10px 30px 0 rgba(0,100,0,0.9);
+    box-shadow: 0 10px 30px 0 rgba(0,100,0,0.9);
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
     margin: 5px 20px 40px 20px;
 
+
 }
 
 button[type=submit]:hover{
-    background-color: #383d41;
+    background-color: #1e7e34;
 }
 
 button[type=submit]:active{
@@ -37,7 +38,7 @@ button[type=submit]:active{
 
 input {
     background-color: #f6f6f6;
-    color: #0d0d0d;
+    color: #1c7430;
     padding: 10px 28px;
     text-align: center;
     text-decoration: none;
@@ -51,11 +52,11 @@ input {
 
 input:focus {
     background-color: #fff;
-    border-bottom: 2px solid #383d41;
+    border-bottom: 2px solid #1c7430;
 }
 
 input::placeholder {
-    color: #383d41;
+    color: #1c7430;
 }
 
 .underlineHover:hover:after {
