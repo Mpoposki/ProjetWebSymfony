@@ -37,7 +37,7 @@ class Resetmdp extends AbstractController
                 ->setFrom('poposki.smurf@gmail.com')
                 ->setTo('poposki.matthieu@gmail.com')
                 ->setBody($this->renderView('/Email/resetemail.html.twig'));
-
+                //Next evolution of the app. Use the ResestForm and sent a mail with a new password
             $mailer->send($message);
 
         return $this->redirectToRoute('Login');
