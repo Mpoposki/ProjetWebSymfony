@@ -30,6 +30,9 @@ class SignUp extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $hash = $encoder->encodePassword($user, $user->getPassword());
+            $user->setPassword($hash);
+
             $user->setCreatedAt(new \DateTime());
             $user->setUpdateAt(new \DateTime());
 

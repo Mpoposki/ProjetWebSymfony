@@ -28,7 +28,7 @@ class LoginForm extends AbstractType
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre email','class' => 'fadeIn second']])
 
-            ->add('password', PasswordType::class, [
+            ->add('password', TextType::class, [
                 'label' => ' ',
                 'attr' => ['placeholder' => 'Entrez votre mot de passe','class' => 'fadeIn third']])
 
