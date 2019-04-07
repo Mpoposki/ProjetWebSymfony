@@ -1,0 +1,20 @@
+{% extends 'baseAdminLogin.html.twig' %}
+
+{% block title %}login{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        {% include 'components/messageFlash.html.twig' %}
+
+        {{ form_start(form, { attr: { class: 'form-signin' } }) }}
+        <div class="row">
+            <h1 class="h3 mb-3 font-weight-normal">Connexion admin</h1>
+            {{ form_widget(form._username) }}
+            {{ form_widget(form._password) }}
+            {{ form_widget(form.submit) }}
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
