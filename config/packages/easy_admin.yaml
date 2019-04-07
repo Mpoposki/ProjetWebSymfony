@@ -1,0 +1,42 @@
+easy_admin:
+    user:
+        display_name: true
+        display_avatar: true
+        name_property_path: 'nom'
+    entities:
+        # List the entity class name you want to manage
+        Admin:
+            class: App\Entity\Admin
+            label: 'Admin'
+            list:
+                title: 'Administrateurs les plus récents'
+            form:
+                fields:
+                    - { property: 'username', type: 'email', label: 'username (email)'}
+                    - 'password'
+        Exercices:
+            class: App\Entity\Exercice
+            label : 'Exercices'
+            list:
+                title: 'Exercices'
+                fields:
+                    - { property: 'id'}
+                    - { property: 'name'}
+                    - { property: 'gif', type: 'image' }
+            form:
+                fields:
+                    - 'name'
+                    - 'gif'
+                    - 'description'
+
+        User:
+            class: App\Entity\User
+            label: 'Utilisateurs'
+            list:
+                title: 'Liste des utilisateurs'
+                fields: ['id', 'name', 'lastName', 'email', 'createdAt']
+                sort: 'createdAt'
+            search:
+                sort: ['createdAt', 'ASC']
+
+

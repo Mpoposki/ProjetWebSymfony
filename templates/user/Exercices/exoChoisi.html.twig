@@ -1,0 +1,48 @@
+{% extends 'baseUser.html.twig' %}
+{% block head %}
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ exercice.name }}{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+              integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+              crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link href="{{ asset('assets/css/dashboard.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('assets/css/exerciceChoisi.css') }}">
+
+    {% endblock %}
+
+{% endblock %}
+{% block body %}
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <img class="image" src="{{ exercice.gif }}">
+        </div>
+        <div class="col-4 titre">
+            {{ exercice.name }}
+        </div>
+    </div>
+
+    <div class="row justify-content-end desc">
+        {{ exercice.description }}
+    </div>
+
+
+    <div class="col">
+        <a href="{{ path('list') }}">
+            <button>Retourner aux
+                exercices
+            </button>
+        </a>
+    </div>
+    </div>
+
+
+{% endblock %}

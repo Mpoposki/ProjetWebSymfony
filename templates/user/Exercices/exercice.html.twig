@@ -1,0 +1,45 @@
+{% extends 'baseUser.html.twig' %}
+{% block head %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Espace entrainements{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+              integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+              crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link href="{{ asset('assets/css/dashboard.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('assets/css/exercice.css') }}">
+
+    {% endblock %}
+
+{% endblock %}
+
+{% block body %}
+    <h2><strong>Espace entrainements</strong></h2><br>
+    {% for row in exercices|batch(2) %}
+        <div class="row">
+            {% for exercice in row %}
+                <div class="col-md-6">
+                    <div class="cont">
+                        <div class="polaroid">
+                            <img src="{{ exercice.gif }}" alt="{{ exercice.name }}" class="image" style="width:100%">
+                            <div class="container">
+                                <p>{{ exercice.name }}</p>
+                            </div>
+                            <div class="middle">
+                                <a href="{{ path('exo', {'slug': exercice.name}) }}">
+                                    <button class="btn">plus des détails</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block head %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+              integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+              crossorigin="anonymous">
+        <link href="{{ asset('assets/css/HomeView.css') }}" rel="stylesheet">
+        <link href="/css/Connection_Login.css" rel="stylesheet"/>
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+    <header>
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <div class="fadeIn first">
+                    <img src="/Image/Login_icon.png" id="iconLogin" alt="User Icon"/>
+                </div>
+
+                <form action="{{ path('Login') }}" method="post">
+                    <input type="text" id="login" class="fadeIn second" name="_username" placeholder="Entrez votre email">
+                    <input type="password" id="password" class="fadeIn third" name="_password" placeholder="Entrez votre mot de passe">
+                    <input type="submit" class="fadeIn fourth" value="Log In">
+                </form>
+                <div id="formFooter">
+                    <a class="underlineHover" id="aa" href="{{ path('app_signup_create') }}">Nouvelle Utilisateur</a><br>
+                    <a class="underlineHover" id="aa" href="{{ path('resetmdp') }}">Mot de Passe oublié</a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+{% endblock %}

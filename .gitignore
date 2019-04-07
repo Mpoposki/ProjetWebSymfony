@@ -5,7 +5,13 @@
 /.env.*.local
 /public/bundles/
 /var/
+/.idea/
+/.env/
 /vendor/
+/.idea/ProjetWebSymfony.iml/
+/.idea/php.xml/
+/.idea/workspace.xml/
+/.idea/
 ###< symfony/framework-bundle ###
 
 ###> symfony/web-server-bundle ###

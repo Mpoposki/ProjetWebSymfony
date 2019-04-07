@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Mot de passe oublié {% endblock %}
+
+    {% block stylesheets %}
+        <link href="{{ asset('assets/css/HomeView.css') }}" rel="stylesheet">
+        <link href="/css/resetmdp.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+              integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+              crossorigin="anonymous">
+    {% endblock %}
+
+    {% block body %}
+    <div class="col-md-12">
+        <h1>Mot de passe oublié</h1>
+        <h4>Si votre email est reconnu par notre système, un email avec votre mot de passe vous sera envoyé</h4>
+    </div>
+
+    <div id="formContent">
+    <div class="fadeIn first">
+           <img src="/Image/pwd.png" id="icon" alt="Pwd Icon"/>
+    </div> <br>
+
+    <form action="{{ path('Mailreset') }}" method="post">
+        <input type="email" id="email" class="fadeIn second" name="email" placeholder="Entrez votre email">
+        <input type="submit" class="fadeIn third" value="Fonctionnalité en developpement">
+    </form>
+
+
+    {% endblock %}
