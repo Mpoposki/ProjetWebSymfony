@@ -21,11 +21,11 @@ class User implements UserInterface
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
-    private $id;
+    protected $id;
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    protected $name;
     /**
      * @ORM\Column(name="lastname",type="string" , length=255)
      */
@@ -35,7 +35,7 @@ class User implements UserInterface
      * @Assert\Length(min="8",minMessage="Votre mot de passe doit etre minimum 8 caractères")
      *
      */
-    private $password;
+    protected $password;
     /**
      * @Assert\EqualTo(propertyPath="password", message="Vous n'avez pas tapé le meme mot de passe")
      */
@@ -44,7 +44,7 @@ class User implements UserInterface
      * @ORM\Column(type="string" , length=255)
      * @Assert\Email()
      */
-    private $email;
+    protected $email;
     /**
      * @ORM\Column(type="boolean",length=1)
      */
