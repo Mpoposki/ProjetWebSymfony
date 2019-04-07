@@ -1,34 +1,3 @@
-#icon {
-    width: 15%;
-}
-.icon_bar {
-    height: 40px;
-}
-nav{
-    margin-bottom: 20px;
-}
-li{
-    padding: 12px 14px;
-    fill: #35322a;
-    filter: url('#money');
-    font-family: 'Playfair Display', 'Georgia', serif;
-    font-size: 14px;
-}
-
-li:hover{
-    background-color: #ddd;
-    color: black;
-}
-
-li:active{
-    background-color: #D3D3D3;
-}
-
-.icon_bar_login{
-    width: 25px;
-    height: 25px;
-}
-
 .cont {
     width: 100%;
     display: inline-block;

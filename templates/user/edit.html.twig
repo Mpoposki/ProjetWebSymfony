@@ -1,11 +1,58 @@
 {% extends 'baseUser.html.twig' %}
+{% block head %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
 
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+              integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+              crossorigin="anonymous">
+
+        <link href="{{ asset('assets/css/dashboard.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('assets/css/edit.css') }}">
+
+    {% endblock %}
+
+{% endblock %}
 {% block body %}
-    <link rel="stylesheet" href="{{ asset('assets/css/editStyle.css') }}" >
+    {% if profils.weight== profils.weightObj %}
 
-    <img src="/Image/goal.png" class="imgGoal"/>
+        <h1>Votre objectif a été fait</h1>
+
+    {% endif %}
+    <br><hr><br>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('assets/css/editStyle.css') }}">
 
 
+
+    <script>
+        window.onload = function () {
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                title: {
+                    text: "Evolution de votre poid"
+                },
+                data: [{
+                    type: "column", //change type to bar, line, area, pie, etc
+                    //indexLabel: "{y}", //Shows y value on all Data Points
+                    indexLabelFontColor: "black",
+                    dataPoints: [
+
+                        {x: 10, y: {{ profils.weight }}, indexLabel: "objectif"},
+                        {x: 20, y: {{ profils.weightObj }}, indexLabel: "ancien poids"}
+                    ]
+                }]
+            });
+            chart.render();
+
+        }
+    </script>
+
+    <hr>
+    <hr>
     <p> Ici, nous suivons votre poids </p>
 
 
@@ -14,35 +61,37 @@
     <p> Votre ancien poid est : {{ profils.weight }} kg </p>
 
     <table class="table">
-            <tr>
-                <td>Mon poid actuel : </td>
-                <td>{{ profils.weight }}<td>
-            </tr>
-            <tr>
-                <td>Ma taille </td>
-                <td>{{ profils.height }}<td>
+        <tr>
+            <td>Mon poid actuel :</td>
+            <td>{{ profils.weight }}
+            <td>
+        </tr>
+        <tr>
+            <td>Ma taille</td>
+            <td>{{ profils.height }}
+            <td>
 
-            </tr>
+        </tr>
 
         <tr>
-            <td>Mon IMC </td>
+            <td>Mon IMC</td>
             <td> imc = {{ (profils.weight ) / (profils.height/100 * profils.height/100) }}</td>
         </tr>
 
         <tr>
-            <td>Votre poid objectif </td>
+            <td>Votre poid objectif</td>
             <td> {{ profils.weightObj }}</td>
         </tr>
 
         <tr>
-            <td> Bilan </td>
-            <td>{%  if  (profils.weight ) / (profils.height/100 * profils.height/100)  > 30  %}
+            <td> Bilan</td>
+            <td>{% if  (profils.weight ) / (profils.height/100 * profils.height/100)  > 30 %}
 
                     <p> Vous avez un IMC très fort (obesité)</p>
                 {% endif %}
             </td>
 
-            <td>{%  if  (profils.weight ) / (profils.height/100 * profils.height/100)  > 19   %}
+            <td>{% if  (profils.weight ) / (profils.height/100 * profils.height/100)  > 19 %}
 
                     <p> Vous avez un IMC très fort, vous devriez manger moins</p>
                 {% endif %}
@@ -51,11 +100,16 @@
     </table>
 
 
+    <div id="formContent">
+        {{ form_start(form) }}
+        <div class="form-group">
+            {{ form(form) }}
+        </div>
+        <div class="form-group">
+            {{ form_end(form) }}
+        </div>
+    </div>
 
-    {{ form(form) }}
-
-
-    <h1> Evolution de votre poid </h1>
 
 
     <hr>

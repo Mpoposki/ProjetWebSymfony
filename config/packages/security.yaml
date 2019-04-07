@@ -20,7 +20,7 @@ security:
             form_login:
                 login_path: Login
                 check_path: Login
-                default_target_path: dashboard_user
+                default_target_path: profil
 
 
 

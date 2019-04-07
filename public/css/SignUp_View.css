@@ -59,18 +59,3 @@ input::placeholder, select::placeholder {
     outline: none;
 }
 
-#icon {
-    width: 20%;
-}
-
-.icon_bar {
-    height: 40px;
-}
-
-.list {
-    font-size: 14px;
-}
-
-.list:active {
-
-}

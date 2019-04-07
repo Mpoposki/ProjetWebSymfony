@@ -30,9 +30,6 @@ class SignUp extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $hash = $encoder->encodePassword($user, $user->getPassword());
-            $user->setPassword($hash);
-
             $user->setCreatedAt(new \DateTime());
             $user->setUpdateAt(new \DateTime());
 
@@ -44,7 +41,7 @@ class SignUp extends AbstractController
             $message = (new\Swift_Message('Bienvenue sur AppSport !'))
                 ->setFrom('poposki.smurf@gmail.com')
                 ->setTo($user->getEmail())
-                ->setBody($this->renderView('/Email/bienvenue.html.twig',array('id'=>$user->getName())));
+                ->setBody($this->renderView('/Email/bienvenue.html.twig',array('name'=>$user->getName(), 'email'=>$user->getEmail(), 'mdp'=>$user->getPassword())));
 
             $mailer->send($message);
 
